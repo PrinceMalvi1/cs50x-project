@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Add Vehicle</h2>
+<form method="POST">
+  <div class="mb-3">
+    <input type="text" class="form-control" name="vehicle_no" placeholder="Vehicle Number" required>
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" name="driver_name" placeholder="Driver Name" required>
+  </div>
+  <div class="mb-3">
+    <input type="text" class="form-control" name="route" placeholder="Route" required>
+  </div>
+  <button type="submit" class="btn btn-success">Add Vehicle</button>
+</form>
+{% endblock %}

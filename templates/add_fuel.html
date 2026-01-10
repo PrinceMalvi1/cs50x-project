@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Add Fuel Entry</h2>
+<form method="POST">
+  <div class="mb-3">
+    <select name="vehicle_id" class="form-select" required>
+      <option value="">Select Vehicle</option>
+      {% for v in vehicles %}
+      <option value="{{ v.id }}">{{ v.vehicle_no }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <input type="date" class="form-control" name="date" required>
+  </div>
+  <div class="mb-3">
+    <select name="fuel_type" class="form-select" required>
+      <option value="Diesel">Diesel</option>
+      <option value="Petrol">Petrol</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <input type="number" step="0.01" class="form-control" name="amount" placeholder="Liters" required>
+  </div>
+  <div class="mb-3">
+    <input type="number" step="0.01" class="form-control" name="cost" placeholder="Cost" required>
+  </div>
+  <button type="submit" class="btn btn-success">Add Fuel</button>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Fees</h2>
+<a href="/add_fee" class="btn btn-primary mb-3">Add Fee</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Student</th>
+      <th>Month</th>
+      <th>Amount</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for fee in fees %}
+    <tr>
+      <td>{{ fee.id }}</td>
+      <td>{{ fee.name }}</td>
+      <td>{{ fee.month }}</td>
+      <td>${{ fee.amount }}</td>
+      <td>{{ fee.status }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

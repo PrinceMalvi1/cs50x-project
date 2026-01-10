@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Mark Attendance</h2>
+<form method="POST">
+  <div class="mb-3">
+    <select name="student_id" class="form-select" required>
+      <option value="">Select Student</option>
+      {% for student in students %}
+      <option value="{{ student.id }}">{{ student.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <input type="date" class="form-control" name="date" required>
+  </div>
+  <div class="mb-3">
+    <select name="status" class="form-select" required>
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Mark</button>
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Vehicles</h2>
+<a href="/add_vehicle" class="btn btn-primary mb-3">Add Vehicle</a>
+<a href="/add_fuel" class="btn btn-warning mb-3 ms-2">Add Fuel Entry</a>
+
+<h4>Vehicles List</h4>
+<table class="table table-striped mb-4">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vehicle No</th>
+      <th>Driver</th>
+      <th>Route</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for v in vehicles %}
+    <tr>
+      <td>{{ v.id }}</td>
+      <td>{{ v.vehicle_no }}</td>
+      <td>{{ v.driver_name }}</td>
+      <td>{{ v.route }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h4>Fuel Log</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vehicle</th>
+      <th>Date</th>
+      <th>Fuel Type</th>
+      <th>Liters</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in fuel_entries %}
+    <tr>
+      <td>{{ f.id }}</td>
+      <td>{{ f.vehicle_no }}</td>
+      <td>{{ f.date }}</td>
+      <td>{{ f.fuel_type }}</td>
+      <td>{{ f.amount_liters }}</td>
+      <td>${{ f.cost }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

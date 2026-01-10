@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Students</h2>
+<a href="/add_student" class="btn btn-primary mb-3">Add Student</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>School</th>
+      <th>Route</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.school }}</td>
+      <td>{{ student.route }}</td>
+      <td>
+        {% if student.photo %}
+        <img src="{{ url_for('static', filename='uploads/' ~ student.photo) }}" width="50" class="rounded">
+        {% else %}
+        N/A
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <div class="card text-white bg-primary">
+      <div class="card-body">
+        <h5 class="card-title">Students</h5>
+        <p class="card-text fs-3">{{ total_students }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-3">
+    <div class="card text-white bg-success">
+      <div class="card-body">
+        <h5 class="card-title">Vehicles</h5>
+        <p class="card-text fs-3">{{ total_vehicles }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-3">
+    <div class="card text-white bg-warning">
+      <div class="card-body">
+        <h5 class="card-title">Fees Collected</h5>
+        <p class="card-text fs-3">${{ total_fees }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-3">
+    <div class="card text-white bg-danger">
+      <div class="card-body">
+        <h5 class="card-title">Fuel Cost</h5>
+        <p class="card-text fs-3">${{ total_fuel }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

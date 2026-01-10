@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="mb-3">Add Fee</h2>
+<form method="POST">
+  <div class="mb-3">
+    <select name="student_id" class="form-select" required>
+      <option value="">Select Student</option>
+      {% for student in students %}
+      <option value="{{ student.id }}">{{ student.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <input type="month" class="form-control" name="month" required>
+  </div>
+  <div class="mb-3">
+    <input type="number" class="form-control" name="amount" placeholder="Amount" required>
+  </div>
+  <div class="mb-3">
+    <select name="status" class="form-select" required>
+      <option value="Paid">Paid</option>
+      <option value="Pending">Pending</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Add Fee</button>
+</form>
+{% endblock %}
