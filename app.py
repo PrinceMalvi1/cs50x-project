@@ -283,8 +283,8 @@ def add_fuel():
     vehicles = cur.fetchall()
     return render_template("add_fuel.html", vehicles=vehicles)
 
-# --------------------
-# RUN APP
-# --------------------
+                                                                                                                                                                                                                                                                         # --------------------
+                                                                                                                                                                                                                                                                    # RUN APP
+                                                                                                                                                                                                                                                                            # --------------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
