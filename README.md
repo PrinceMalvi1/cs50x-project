@@ -44,3 +44,4 @@ This project aims to provide a **simple and digital solution** to these problems
 ```bash
 pip install flask
 flask run --host=0.0.0.0 --port=5000
+
